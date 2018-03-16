@@ -31,6 +31,10 @@ class SamplesController < ApplicationController
       end
   end
   
+  def index
+    @samples = Sample.all
+  end
+  
   private
   
     def sample_params

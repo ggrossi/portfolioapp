@@ -1,3 +1,31 @@
 <h1>
   Mostrando um conteúdo:
 </h1>
+
+ <p>
+    URL do conteúdo:
+    <%= @sample.content_url %>
+  </p>
+  <p>
+    URL da imagem:
+    <%= @sample.image_url %>
+  </p>
+  <p>
+    Título:
+    <%= @sample.headline %>
+  </p>
+  <p>
+    Descrição:
+    <%= @sample.description %>
+  </p>
+  <p>
+    Veículo:
+    <%= @sample.medium %>
+  </p>
+  <p>
+    Data:
+    <%= @sample.date %>
+  </p>
+
+    <%= link_to "Editar", edit_sample_path(@sample) %> | 
+    <%= link_to "Ver todos os conteúdos", samples_path %>
