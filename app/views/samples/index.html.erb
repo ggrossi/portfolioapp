@@ -21,6 +21,7 @@
     <td><%= sample.date %></td>
     <td><%= link_to "Editar", edit_sample_path(sample) %></td>
     <td><%= link_to "Visualizar", sample_path(sample)%></td>
+    <td><%= link_to "Deletar", sample_path(sample), method: :delete, data: {confirm: "Tem certeza que quer deletar esse conteúdo?"} %></td>
   </tr>
   <% end %>
 </table>

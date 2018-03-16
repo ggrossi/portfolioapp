@@ -35,6 +35,13 @@ class SamplesController < ApplicationController
     @samples = Sample.all
   end
   
+  def destroy
+    @sample = Sample.find(params[:id])
+    @sample.destroy
+    flash[:notice] = "Conteúdo deletado com sucesso!"
+    redirect_to samples_path
+  end
+  
   private
   
     def sample_params
