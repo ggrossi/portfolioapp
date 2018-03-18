@@ -2,44 +2,6 @@
   Novo Conteúdo:
 </h1>
 
-<% if @sample.errors.any? %>
-  <h2>Conteúdo não pôde ser salvo.</h2>
-  <ul>
-    <% @sample.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-
-<%= form_for @sample do |f| %>
-  <p>
-    <%= f.label :content_url %>
-    <%= f.text_field :content_url %>
-  </p>
-  <p>
-    <%= f.label :image_url %>
-    <%= f.text_field :image_url %>
-  </p>
-  <p>
-    <%= f.label :headline %>
-    <%= f.text_field :headline %>
-  </p>
-  <p>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.label :medium %>
-    <%= f.text_field :medium %>
-  </p>
-  <p>
-    <%= f.label :date %>
-    <%= f.text_field :date %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render 'form' %>
 
 <br><%= link_to "Ver todos os conteúdos", samples_path %>

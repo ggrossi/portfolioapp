@@ -1,4 +1,6 @@
 class SamplesController < ApplicationController
+  before_action :set_sample, only: [:show, :edit, :update, :destroy]
+  
   def new
     @sample = Sample.new
   end
@@ -14,15 +16,12 @@ class SamplesController < ApplicationController
   end
   
   def show
-    @sample = Sample.find(params[:id])
   end
   
   def edit
-    @sample = Sample.find(params[:id])
   end
   
   def update
-    @sample = Sample.find(params[:id])
       if @sample.update(sample_params)
         flash[:notice] = "Conteúdo atualizado!"
         redirect_to sample_path(@sample)
@@ -36,13 +35,16 @@ class SamplesController < ApplicationController
   end
   
   def destroy
-    @sample = Sample.find(params[:id])
     @sample.destroy
     flash[:notice] = "Conteúdo deletado com sucesso!"
     redirect_to samples_path
   end
   
   private
+  
+    def set_sample
+      @sample = Sample.find(params[:id])
+    end
   
     def sample_params
       params.require(:sample).permit(:content_url, :image_url, :headline, :description, :medium, :date)
