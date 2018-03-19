@@ -7,6 +7,7 @@ class CreateSamples < ActiveRecord::Migration[5.1]
       t.text :description
       t.text :medium
       t.text :date
+      t.timestamps
     end
   end
 end
